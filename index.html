@@ -93,6 +93,8 @@
             background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
             transition: left 1.5s ease;
             z-index: 10;
+            /* --- THIS IS THE FIX --- */
+            pointer-events: none; 
         }
         
         .project-card:hover::before {
