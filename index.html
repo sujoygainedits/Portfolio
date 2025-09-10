@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sujoy Gain - Creative Video Editor Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --gold-primary: #D4AF37;
+            --gold-light: #F7E98E;
+            --gold-dark: #B8860B;
+            --champagne: #F7E7CE;
+            --bronze: #CD7F32;
+            --dark-bg: #0A0A0A;
+            --dark-card: #1A1A1A;
+            --dark-border: #2A2A2A;
+            --cream: #FFF8DC;
+            --platinum: #E5E4E2;
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            letter-spacing: -0.02em;
+            line-height: 1.7;
+            background: var(--dark-bg);
+        }
+        
+        .luxury-heading {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .swipe-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            border: 1px solid var(--gold-light);
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+        }
+        
+        .swipe-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 1.5s ease;
+        }
+        
+        .swipe-btn:hover::before {
+            left: 100%;
+        }
+        
+        .swipe-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 48px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(145deg, var(--dark-card), #151515);
+            border: 1px solid var(--dark-border);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 24px 64px rgba(212, 175, 55, 0.2);
+            border-color: var(--gold-primary);
+        }
+        
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid var(--dark-border);
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+            transition: left 1.5s ease;
+            z-index: 10;
+        }
+        
+        .project-card:hover::before {
+            left: 100%;
+        }
+        
+        .project-card:hover {
+            transform: scale(1.02);
+            border-color: var(--gold-primary);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.25);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mascot {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+        
+        .skill-bar {
+            transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 0 0 60px rgba(212, 175, 55, 0.3);
+        }
+        
+        .luxury-gradient {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1a1a 50%, var(--dark-bg) 100%);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .premium-border {
+            border: 1px solid;
+            border-image: linear-gradient(135deg, var(--gold-primary), var(--gold-light), var(--gold-primary)) 1;
+        }
+        
+        .glass-effect {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+            color: var(--platinum);
+        }
+        
+        .social-icon:hover {
+            color: var(--gold-primary);
+            transform: scale(1.2);
+        }
+        
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            width: 100%;
+        }
+
+        .vertical-video-placeholder {
+            aspect-ratio: 9 / 16;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="text-white" style="background: var(--dark-bg);">
+    <nav class="fixed top-0 w-full glass-effect z-50 border-b" style="border-color: rgba(212, 175, 55, 0.3);">
+        <div class="max-w-6xl mx-auto px-6 py-5">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div class="text-3xl">🎬</div>
+                    <div class="text-2xl font-bold gold-gradient luxury-heading tracking-wide">Sujoy's Video Edits</div>
+                </div>
+                <div class="hidden md:flex space-x-10">
+                    <a href="#about" class="text-gray-300 hover:text-yellow-400 transition-all duration-300 font-medium tracking-wide relative group">
+                        About
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#projects" class="text-gray-300 hover:text-yellow-400 transition-all duration-300 font-medium tracking-wide relative group">
+                        Projects
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-yellow-400 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-3">
+                <a href="#about" class="block text-gray-300 hover:text-yellow-400 py-2 tracking-wide transition-colors">About</a>
+                <a href="#projects" class="block text-gray-300 hover:text-yellow-400 py-2 tracking-wide transition-colors">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center justify-center luxury-gradient relative overflow-hidden">
+        <div class="absolute top-20 left-10 text-6xl opacity-15 animate-pulse" style="color: var(--gold-primary);">💎</div>
+        <div class="absolute bottom-32 right-16 text-4xl opacity-20 animate-bounce" style="color: var(--gold-light);">✨</div>
+        <div class="absolute top-1/3 right-20 text-3xl opacity-15" style="color: var(--bronze);">🏆</div>
+        <div class="absolute top-1/4 left-1/4 text-2xl opacity-10" style="color: var(--gold-primary);">🎬</div>
+        
+        <div class="text-center px-6 z-10">
+            <div class="mascot mb-10 fade-in">
+                <div class="w-36 h-36 mx-auto mb-8 rounded-full bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 flex items-center justify-center text-7xl shadow-2xl border-4" style="border-color: var(--gold-primary); box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);">
+                    🎬
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 glow-text fade-in leading-tight tracking-tight luxury-heading">
+                <span class="gold-gradient">Professional Video Editing</span><br>
+                <span style="color: var(--champagne);">That Gets You More Views</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl mb-12 fade-in" style="color: var(--platinum); font-weight: 300; letter-spacing: 0.5px;">
+                I help creators and businesses turn raw footage into videos that attract, engage, and grow audiences.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-3xl mx-auto fade-in">
+                <div class="glass-effect p-6 rounded-3xl border card-hover" style="border-color: var(--gold-primary);">
+                    <div class="text-4xl font-bold gold-gradient tracking-tight luxury-heading">3+</div>
+                    <div style="color: var(--platinum);" class="tracking-wide font-medium">Years of Expertise</div>
+                </div>
+                <div class="glass-effect p-6 rounded-3xl border card-hover" style="border-color: var(--gold-primary);">
+                    <div class="text-4xl font-bold gold-gradient tracking-tight luxury-heading">150+</div>
+                    <div style="color: var(--platinum);" class="tracking-wide font-medium">Projects Completed</div>
+                </div>
+                <div class="glass-effect p-6 rounded-3xl border card-hover" style="border-color: var(--gold-primary);">
+                    <div class="text-4xl font-bold gold-gradient tracking-tight luxury-heading">6+</div>
+                    <div style="color: var(--platinum);" class="tracking-wide font-medium">Happy Clients</div>
+                </div>
+            </div>
+            
+            <div class="fade-in">
+                <a href="#contact" class="swipe-btn inline-block px-16 py-5 rounded-full text-xl font-bold text-black tracking-wide luxury-heading">
+                    Let's Talk ✨
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24" style="background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-card) 50%, var(--dark-bg) 100%);">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="text-center fade-in">
+                    <div class="glass-effect rounded-3xl p-10 border shadow-2xl max-w-md mx-auto relative" style="border-color: var(--gold-primary); box-shadow: 0 25px 80px rgba(212, 175, 55, 0.3);">
+                        <div class="absolute -top-6 -right-6 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-3 rounded-full font-bold text-sm tracking-wide z-10 shadow-lg">
+                            Creative Professional 🎬
+                        </div>
+                        
+                        <div class="w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl border-4" style="border-color: var(--gold-primary);">
+                            <img src="https://lh3.googleusercontent.com/a/ACg8ocIGfRlmHxiWcQiCYNKIh6HYsarYRYOsVa4M1QX9vT2s999Ah7RD=s288-c-no" alt="Sujoy Gain Profile Picture" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <h3 class="text-3xl font-bold gold-gradient mb-3 tracking-tight luxury-heading">Sujoy Gain</h3>
+                        <p class="text-xl font-semibold mb-8 tracking-wide" style="color: var(--champagne);">Creative Video Editor</p>
+                        
+                        <div class="space-y-5 text-left">
+                            <div class="flex items-center space-x-4 p-3 rounded-xl glass-effect">
+                                <div class="text-2xl">📱</div>
+                                <span style="color: var(--platinum);" class="text-sm tracking-wider font-medium">+91 8478955957</span>
+                            </div>
+                            <div class="flex items-center space-x-4 p-3 rounded-xl glass-effect">
+                                <div class="text-2xl">📍</div>
+                                <span style="color: var(--platinum);" class="text-sm tracking-wider font-medium">Kolkata, India</span>
+                            </div>
+                            <div class="flex items-center space-x-4 p-3 rounded-xl glass-effect">
+                                <div class="text-2xl">📧</div>
+                                <span style="color: var(--platinum);" class="text-sm tracking-wider font-medium">sujoygain.edits@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h2 class="text-5xl md:text-6xl font-bold mb-8 leading-tight tracking-tight luxury-heading">
+                        <span class="gold-gradient">Quality You Can Trust</span><br>
+                        <span style="color: var(--champagne);">Edits That Keep Viewers Watching</span>
+                    </h2>
+                    
+                    <p class="text-xl mb-12 leading-relaxed tracking-wide font-light" style="color: var(--platinum);">
+                        Helping Your Brand Reach More People with professional video editing that enhances your content and engages your audience.
+                    </p>
+                    
+                    <div class="space-y-6 mb-12">
+                        <div class="glass-effect p-4 rounded-2xl">
+                            <div class="flex justify-between mb-3">
+                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/250px-Adobe_Premiere_Pro_CC_icon.svg.png" alt="Premiere Pro Logo" class="w-10 h-10 mr-4 rounded-md">
+                                    Premiere Pro
+                                </span>
+                                <span class="gold-gradient font-bold text-lg">93%</span>
+                            </div>
+                            <div style="background: var(--dark-border);" class="rounded-full h-4">
+                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-4 rounded-full" style="width: 0%" data-width="93%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-effect p-4 rounded-2xl">
+                            <div class="flex justify-between mb-3">
+                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/250px-Adobe_After_Effects_CC_icon.svg.png" alt="After Effects Logo" class="w-10 h-10 mr-4 rounded-md">
+                                    After Effects
+                                </span>
+                                <span class="gold-gradient font-bold text-lg">33%</span>
+                            </div>
+                            <div style="background: var(--dark-border);" class="rounded-full h-4">
+                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-4 rounded-full" style="width: 0%" data-width="33%"></div>
+                            </div>
+                        </div>
+
+                        <div class="glass-effect p-4 rounded-2xl">
+                            <div class="flex justify-between mb-3">
+                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide">
+                                     <img src="https://images.sftcdn.net/images/t_app-icon-s/p/3ab9b4bc-bd4c-4ee3-b65e-fbab19e88adf/2239545102/capcut-Download-CapCut.jpg" alt="CapCut Logo" class="w-10 h-10 mr-4 rounded-md">
+                                    CapCut
+                                </span>
+                                <span class="gold-gradient font-bold text-lg">90%</span>
+                            </div>
+                            <div style="background: var(--dark-border);" class="rounded-full h-4">
+                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-4 rounded-full" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-effect p-4 rounded-2xl">
+                            <div class="flex justify-between mb-3">
+                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide">
+                                    <span class="text-3xl mr-4">🎵</span> Sound Designing
+                                </span>
+                                <span class="gold-gradient font-bold text-lg">81%</span>
+                            </div>
+                            <div style="background: var(--dark-border);" class="rounded-full h-4">
+                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-4 rounded-full" style="width: 0%" data-width="81%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-effect p-4 rounded-2xl">
+                            <div class="flex justify-between mb-3">
+                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide">
+                                    <span class="text-3xl mr-4">🎨</span> Color Correction & Grading
+                                </span>
+                                <span class="gold-gradient font-bold text-lg">84%</span>
+                            </div>
+                            <div style="background: var(--dark-border);" class="rounded-full h-4">
+                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-4 rounded-full" style="width: 0%" data-width="84%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-lg mb-10 leading-relaxed tracking-wide font-light" style="color: var(--platinum);">
+                        Every frame tells a story. Every cut creates emotion. Every project becomes a masterpiece.
+                    </p>
+                    
+                    <a href="#contact" class="swipe-btn inline-block px-10 py-4 rounded-full font-bold text-black tracking-wide luxury-heading">
+                        Let's Talk ✨
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24" style="background: var(--dark-bg);">
+        <div class="max-w-6xl mx-auto px-6">
+            
+            <div class="mb-40">
+                <div class="text-center mb-24 fade-in">
+                    <div class="glass-effect rounded-3xl p-12 border-2 relative overflow-hidden" style="border-color: var(--gold-primary); box-shadow: 0 25px 80px rgba(212, 175, 55, 0.2);">
+                        <h3 class="text-5xl md:text-6xl font-bold mb-6 relative z-10 leading-tight tracking-tight luxury-heading">
+                            <span class="gold-gradient">🎬 Horizontal Videos</span>
+                        </h3>
+                        <div class="w-20 h-1.5 mx-auto mb-6 rounded-full" style="background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));"></div>
+                        <p style="color: var(--platinum);" class="text-2xl font-light tracking-wide">VSL's Ads and More</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 gap-16 max-w-4xl mx-auto">
+                    <div class="fade-in">
+                        <div class="relative rounded-3xl overflow-hidden project-card video-placeholder" style="border: 3px solid var(--gold-primary);">
+                            <iframe
+                                class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/0nUCaHKRksk?autoplay=1&mute=1&loop=1&playlist=0nUCaHKRksk&controls=1&showinfo=0&modestbranding=1"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="fade-in">
+                        <div class="relative rounded-3xl overflow-hidden project-card video-placeholder" style="border: 3px solid var(--gold-primary);">
+                            <iframe
+                                class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/tZ8UliuadJo?autoplay=1&mute=1&loop=1&playlist=tZ8UliuadJo&controls=1&showinfo=0&modestbranding=1"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="fade-in">
+                        <div class="relative rounded-3xl overflow-hidden project-card video-placeholder" style="border: 3px solid var(--gold-primary);">
+                            <iframe
+                                class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/2gNwubFiIRM?autoplay=1&mute=1&loop=1&playlist=2gNwubFiIRM&controls=1&showinfo=0&modestbranding=1"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="text-center mb-24 fade-in">
+                    <div class="glass-effect rounded-3xl p-12 border-2 relative overflow-hidden" style="border-color: var(--gold-primary); box-shadow: 0 25px 80px rgba(212, 175, 55, 0.2);">
+                        <h3 class="text-5xl md:text-6xl font-bold mb-6 relative z-10 leading-tight tracking-tight luxury-heading">
+                            <span class="gold-gradient">📱 Vertical Videos</span>
+                        </h3>
+                        <div class="w-20 h-1.5 mx-auto mb-6 rounded-full" style="background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));"></div>
+                        <p style="color: var(--platinum);" class="text-2xl font-light tracking-wide">Reels, Shorts & and more</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="fade-in">
+                        <div class="relative rounded-3xl overflow-hidden project-card vertical-video-placeholder" style="border: 3px solid var(--gold-primary);">
+                             <iframe
+                                class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/6rI-FVatdjA?autoplay=1&mute=1&loop=1&playlist=6rI-FVatdjA&controls=1&showinfo=0&modestbranding=1"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="fade-in">
+                        <div class="relative rounded-3xl overflow-hidden project-card vertical-video-placeholder" style="border: 3px solid var(--gold-primary);">
+                           <iframe
+                                class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/Rcg_EYogAto?autoplay=1&mute=1&loop=1&playlist=Rcg_EYogAto&controls=1&showinfo=0&modestbranding=1"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-in">
+                        <div class="relative rounded-3xl overflow-hidden project-card vertical-video-placeholder" style="border: 3px solid var(--gold-primary);">
+                           <iframe
+                                class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/wLKCZjAJN7A?autoplay=1&mute=1&loop=1&playlist=wLKCZjAJN7A&controls=1&showinfo=0&modestbranding=1"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="fade-in">
+                        <div class="relative rounded-3xl overflow-hidden project-card vertical-video-placeholder" style="border: 3px solid var(--gold-primary);">
+                           <iframe
+                                class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/XZ0YdPYmAYk?autoplay=1&mute=1&loop=1&playlist=XZ0YdPYmAYk&controls=1&showinfo=0&modestbranding=1"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="fade-in">
+                        <div class="relative rounded-3xl overflow-hidden project-card vertical-video-placeholder" style="border: 3px solid var(--gold-primary);">
+                           <iframe
+                                class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/ol4fcgXXsUk?autoplay=1&mute=1&loop=1&playlist=ol4fcgXXsUk&controls=1&showinfo=0&modestbranding=1"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="fade-in">
+                        <div class="relative rounded-3xl overflow-hidden project-card vertical-video-placeholder" style="border: 3px solid var(--gold-primary);">
+                           <iframe
+                                class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/7X5PCuj366g?autoplay=1&mute=1&loop=1&playlist=7X5PCuj366g&controls=1&showinfo=0&modestbranding=1"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 luxury-gradient">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="fade-in">
+                <h2 class="text-5xl md:text-6xl font-bold mb-8 leading-tight tracking-tight luxury-heading">
+                    <span class="gold-gradient">Have footage?</span><br>
+                    <span style="color: var(--champagne);">Let's turn it into content that works.</span>
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16 max-w-5xl mx-auto">
+                    <div class="glass-effect rounded-3xl p-8 border card-hover" style="border-color: var(--gold-primary); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);">
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">📧</div>
+                            <h4 class="gold-gradient font-bold text-xl mb-3 tracking-wide luxury-heading">Email</h4>
+                            <p style="color: var(--platinum);" class="text-sm tracking-wider font-medium">sujoygain.edits@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-effect rounded-3xl p-8 border card-hover" style="border-color: var(--gold-primary); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);">
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">📱</div>
+                            <h4 class="gold-gradient font-bold text-xl mb-3 tracking-wide luxury-heading">Phone</h4>
+                            <p style="color: var(--platinum);" class="text-sm tracking-wider font-medium">+91 8478955957</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-effect rounded-3xl p-8 border card-hover" style="border-color: var(--gold-primary); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);">
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">📍</div>
+                            <h4 class="gold-gradient font-bold text-xl mb-3 tracking-wide luxury-heading">Location</h4>
+                            <p style="color: var(--platinum);" class="text-sm tracking-wider font-medium">Kolkata, India</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/+918478955957" class="swipe-btn inline-block px-16 py-6 rounded-full text-2xl font-bold text-black tracking-wide luxury-heading">
+                    Start Your Project ✨
+                </a>
+            </div>
+            
+            <div class="mt-20 pt-10 border-t" style="border-color: rgba(212, 175, 55, 0.3);">
+                <div class="flex justify-center space-x-8 mb-8">
+                    <a href="https://wa.me/+918478955957" class="social-icon text-3xl" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/hisujoygain?igsh=bnoyZ3g1M3BzM21z" class="social-icon text-3xl" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@hisujoy.videoeditor" class="social-icon text-3xl" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sujoy-gain-77a6571a5" class="social-icon text-3xl" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                     <a href="https://t.me/SujoyGain" class="social-icon text-3xl" title="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://x.com/HiSujoyGain" class="social-icon text-3xl" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <p style="color: var(--platinum);" class="tracking-wide font-light text-lg">Follow me on social media and drop me a WhatsApp message — I'll reply within 24 hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Skill bars animation
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach((bar, index) => {
+                        const width = bar.getAttribute('data-width');
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, index * 300);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+            skillObserver.observe(aboutSection);
+        }
+
+        // Project card interactions
+        document.querySelectorAll('.project-card').forEach(card => {
+            // This condition prevents the alert from showing on the iframe's parent
+            if (!card.querySelector('iframe')) {
+                card.addEventListener('click', () => {
+                    alert(`🎬 Video Preview\n\nThis is a demo! In real life, this would play your video.`);
+                });
+            }
+        });
+
+        // Initial hero animation
+        window.addEventListener('load', () => {
+            document.querySelectorAll('#home .fade-in').forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
