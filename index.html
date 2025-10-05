@@ -93,8 +93,6 @@
             background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
             transition: left 1.5s ease;
             z-index: 10;
-            /* --- THIS IS THE FIX --- */
-            pointer-events: none; 
         }
         
         .project-card:hover::before {
@@ -183,9 +181,9 @@
     <nav class="fixed top-0 w-full glass-effect z-50 border-b" style="border-color: rgba(212, 175, 55, 0.3);">
         <div class="max-w-6xl mx-auto px-6 py-5">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <div class="text-2xl md:text-3xl">🎬</div>
-                    <div class="text-xl md:text-2xl font-bold gold-gradient luxury-heading tracking-wide">Sujoy's Video Edits</div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-3xl">🎬</div>
+                    <div class="text-2xl font-bold gold-gradient luxury-heading tracking-wide">Sujoy's Video Edits</div>
                 </div>
                 <div class="hidden md:flex space-x-10">
                     <a href="#about" class="text-gray-300 hover:text-yellow-400 transition-all duration-300 font-medium tracking-wide relative group">
@@ -210,45 +208,45 @@
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex items-center justify-center luxury-gradient relative overflow-hidden pt-20">
+    <section id="home" class="min-h-screen flex items-center justify-center luxury-gradient relative overflow-hidden">
         <div class="absolute top-20 left-10 text-6xl opacity-15 animate-pulse" style="color: var(--gold-primary);">💎</div>
         <div class="absolute bottom-32 right-16 text-4xl opacity-20 animate-bounce" style="color: var(--gold-light);">✨</div>
         <div class="absolute top-1/3 right-20 text-3xl opacity-15" style="color: var(--bronze);">🏆</div>
         <div class="absolute top-1/4 left-1/4 text-2xl opacity-10" style="color: var(--gold-primary);">🎬</div>
         
         <div class="text-center px-6 z-10">
-            <div class="mascot mb-8 fade-in">
-                <div class="w-32 h-32 md:w-36 md:h-36 mx-auto mb-8 rounded-full bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 flex items-center justify-center text-6xl md:text-7xl shadow-2xl border-4" style="border-color: var(--gold-primary); box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);">
+            <div class="mascot mb-10 fade-in">
+                <div class="w-36 h-36 mx-auto mb-8 rounded-full bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 flex items-center justify-center text-7xl shadow-2xl border-4" style="border-color: var(--gold-primary); box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);">
                     🎬
                 </div>
             </div>
             
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 glow-text fade-in leading-tight tracking-tight luxury-heading">
-                <span class="gold-gradient whitespace-nowrap">Professional Video Editing</span><br>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 glow-text fade-in leading-tight tracking-tight luxury-heading">
+                <span class="gold-gradient">Professional Video Editing</span><br>
                 <span style="color: var(--champagne);">That Gets You More Views</span>
             </h1>
             
-            <p class="text-base sm:text-xl md:text-2xl mb-12 fade-in max-w-3xl mx-auto" style="color: var(--platinum); font-weight: 300; letter-spacing: 0.5px;">
+            <p class="text-xl md:text-2xl mb-12 fade-in" style="color: var(--platinum); font-weight: 300; letter-spacing: 0.5px;">
                 I help creators and businesses turn raw footage into videos that attract, engage, and grow audiences.
             </p>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16 max-w-3xl mx-auto fade-in">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-3xl mx-auto fade-in">
                 <div class="glass-effect p-6 rounded-3xl border card-hover" style="border-color: var(--gold-primary);">
-                    <div class="text-3xl sm:text-4xl font-bold gold-gradient tracking-tight luxury-heading">3+</div>
-                    <div style="color: var(--platinum);" class="text-sm sm:text-base tracking-wide font-medium">Years of Expertise</div>
+                    <div class="text-4xl font-bold gold-gradient tracking-tight luxury-heading">3+</div>
+                    <div style="color: var(--platinum);" class="tracking-wide font-medium">Years of Expertise</div>
                 </div>
                 <div class="glass-effect p-6 rounded-3xl border card-hover" style="border-color: var(--gold-primary);">
-                    <div class="text-3xl sm:text-4xl font-bold gold-gradient tracking-tight luxury-heading">150+</div>
-                    <div style="color: var(--platinum);" class="text-sm sm:text-base tracking-wide font-medium">Projects Completed</div>
+                    <div class="text-4xl font-bold gold-gradient tracking-tight luxury-heading">500K+</div>
+                    <div style="color: var(--platinum);" class="tracking-wide font-medium">Views Generated</div>
                 </div>
                 <div class="glass-effect p-6 rounded-3xl border card-hover" style="border-color: var(--gold-primary);">
-                    <div class="text-3xl sm:text-4xl font-bold gold-gradient tracking-tight luxury-heading">6+</div>
-                    <div style="color: var(--platinum);" class="text-sm sm:text-base tracking-wide font-medium">Happy Clients</div>
+                    <div class="text-4xl font-bold gold-gradient tracking-tight luxury-heading">4.2/5</div>
+                    <div style="color: var(--platinum);" class="tracking-wide font-medium">Client Satisfaction</div>
                 </div>
             </div>
             
             <div class="fade-in">
-                <a href="#contact" class="swipe-btn inline-block px-12 sm:px-16 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-bold text-black tracking-wide luxury-heading">
+                <a href="#contact" class="swipe-btn inline-block px-16 py-5 rounded-full text-xl font-bold text-black tracking-wide luxury-heading">
                     Let's Talk ✨
                 </a>
             </div>
@@ -259,115 +257,115 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="text-center fade-in">
-                    <div class="glass-effect rounded-3xl p-6 sm:p-10 border shadow-2xl max-w-md mx-auto relative" style="border-color: var(--gold-primary); box-shadow: 0 25px 80px rgba(212, 175, 55, 0.3);">
-                        <div class="absolute -top-5 -right-5 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-xs sm:text-sm tracking-wide z-10 shadow-lg">
+                    <div class="glass-effect rounded-3xl p-10 border shadow-2xl max-w-md mx-auto relative" style="border-color: var(--gold-primary); box-shadow: 0 25px 80px rgba(212, 175, 55, 0.3);">
+                        <div class="absolute -top-6 -right-6 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-3 rounded-full font-bold text-sm tracking-wide z-10 shadow-lg">
                             Creative Professional 🎬
                         </div>
                         
-                        <div class="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl border-4" style="border-color: var(--gold-primary);">
+                        <div class="w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl border-4" style="border-color: var(--gold-primary);">
                             <img src="https://lh3.googleusercontent.com/a/ACg8ocIGfRlmHxiWcQiCYNKIh6HYsarYRYOsVa4M1QX9vT2s999Ah7RD=s288-c-no" alt="Sujoy Gain Profile Picture" class="w-full h-full object-cover">
                         </div>
                         
-                        <h3 class="text-2xl sm:text-3xl font-bold gold-gradient mb-3 tracking-tight luxury-heading">Sujoy Gain</h3>
-                        <p class="text-lg sm:text-xl font-semibold mb-8 tracking-wide" style="color: var(--champagne);">Creative Video Editor</p>
+                        <h3 class="text-3xl font-bold gold-gradient mb-3 tracking-tight luxury-heading">Sujoy Gain</h3>
+                        <p class="text-xl font-semibold mb-8 tracking-wide" style="color: var(--champagne);">Creative Video Editor</p>
                         
-                        <div class="space-y-4 text-left">
+                        <div class="space-y-5 text-left">
                             <div class="flex items-center space-x-4 p-3 rounded-xl glass-effect">
-                                <div class="text-xl sm:text-2xl">📱</div>
-                                <span style="color: var(--platinum);" class="text-xs sm:text-sm tracking-wider font-medium">+91 8478955957</span>
+                                <div class="text-2xl">📱</div>
+                                <span style="color: var(--platinum);" class="text-sm tracking-wider font-medium">+91 8478955957</span>
                             </div>
                             <div class="flex items-center space-x-4 p-3 rounded-xl glass-effect">
-                                <div class="text-xl sm:text-2xl">📍</div>
-                                <span style="color: var(--platinum);" class="text-xs sm:text-sm tracking-wider font-medium">Kolkata, India</span>
+                                <div class="text-2xl">📍</div>
+                                <span style="color: var(--platinum);" class="text-sm tracking-wider font-medium">Kolkata, India</span>
                             </div>
                             <div class="flex items-center space-x-4 p-3 rounded-xl glass-effect">
-                                <div class="text-xl sm:text-2xl">📧</div>
-                                <span style="color: var(--platinum);" class="text-xs sm:text-sm tracking-wider font-medium">sujoygain.edits@gmail.com</span>
+                                <div class="text-2xl">📧</div>
+                                <span style="color: var(--platinum);" class="text-sm tracking-wider font-medium">sujoygain.edits@gmail.com</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="fade-in">
-                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 leading-tight tracking-tight luxury-heading">
+                    <h2 class="text-5xl md:text-6xl font-bold mb-8 leading-tight tracking-tight luxury-heading">
                         <span class="gold-gradient">Quality You Can Trust</span><br>
                         <span style="color: var(--champagne);">Edits That Keep Viewers Watching</span>
                     </h2>
                     
-                    <p class="text-lg sm:text-xl mb-12 leading-relaxed tracking-wide font-light" style="color: var(--platinum);">
+                    <p class="text-xl mb-12 leading-relaxed tracking-wide font-light" style="color: var(--platinum);">
                         Helping Your Brand Reach More People with professional video editing that enhances your content and engages your audience.
                     </p>
                     
                     <div class="space-y-6 mb-12">
                         <div class="glass-effect p-4 rounded-2xl">
-                            <div class="flex justify-between mb-3 items-center">
-                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide text-sm sm:text-base">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/250px-Adobe_Premiere_Pro_CC_icon.svg.png" alt="Premiere Pro Logo" class="w-8 h-8 sm:w-10 sm:h-10 mr-3 sm:mr-4 rounded-md">
+                            <div class="flex justify-between mb-3">
+                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/250px-Adobe_Premiere_Pro_CC_icon.svg.png" alt="Premiere Pro Logo" class="w-10 h-10 mr-4 rounded-md">
                                     Premiere Pro
                                 </span>
-                                <span class="gold-gradient font-bold text-base sm:text-lg">93%</span>
+                                <span class="gold-gradient font-bold text-lg">93%</span>
                             </div>
-                            <div style="background: var(--dark-border);" class="rounded-full h-3 sm:h-4">
-                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-3 sm:h-4 rounded-full" style="width: 0%" data-width="93%"></div>
+                            <div style="background: var(--dark-border);" class="rounded-full h-4">
+                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-4 rounded-full" style="width: 0%" data-width="93%"></div>
                             </div>
                         </div>
                         
-                        <div class="glass-effect p-4 rounded-2xl">
-                            <div class="flex justify-between mb-3 items-center">
-                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide text-sm sm:text-base">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/250px-Adobe_After_Effects_CC_icon.svg.png" alt="After Effects Logo" class="w-8 h-8 sm:w-10 sm:h-10 mr-3 sm:mr-4 rounded-md">
+                        <div class="glass-effect p-4 rounded-2xl" hidden>
+                            <div class="flex justify-between mb-3">
+                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Adobe_After_Effects_CC_icon.svg/250px-Adobe_After_Effects_CC_icon.svg.png" alt="After Effects Logo" class="w-10 h-10 mr-4 rounded-md">
                                     After Effects
                                 </span>
-                                <span class="gold-gradient font-bold text-base sm:text-lg">33%</span>
+                                <span class="gold-gradient font-bold text-lg">33%</span>
                             </div>
-                            <div style="background: var(--dark-border);" class="rounded-full h-3 sm:h-4">
-                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-3 sm:h-4 rounded-full" style="width: 0%" data-width="33%"></div>
+                            <div style="background: var(--dark-border);" class="rounded-full h-4">
+                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-4 rounded-full" style="width: 0%" data-width="33%"></div>
                             </div>
                         </div>
 
                         <div class="glass-effect p-4 rounded-2xl">
-                            <div class="flex justify-between mb-3 items-center">
-                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide text-sm sm:text-base">
-                                     <img src="https://images.sftcdn.net/images/t_app-icon-s/p/3ab9b4bc-bd4c-4ee3-b65e-fbab19e88adf/2239545102/capcut-Download-CapCut.jpg" alt="CapCut Logo" class="w-8 h-8 sm:w-10 sm:h-10 mr-3 sm:mr-4 rounded-md">
+                            <div class="flex justify-between mb-3">
+                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide">
+                                     <img src="https://images.sftcdn.net/images/t_app-icon-s/p/3ab9b4bc-bd4c-4ee3-b65e-fbab19e88adf/2239545102/capcut-Download-CapCut.jpg" alt="CapCut Logo" class="w-10 h-10 mr-4 rounded-md">
                                     CapCut
                                 </span>
-                                <span class="gold-gradient font-bold text-base sm:text-lg">90%</span>
+                                <span class="gold-gradient font-bold text-lg">90%</span>
                             </div>
-                            <div style="background: var(--dark-border);" class="rounded-full h-3 sm:h-4">
-                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-3 sm:h-4 rounded-full" style="width: 0%" data-width="90%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="glass-effect p-4 rounded-2xl">
-                            <div class="flex justify-between mb-3 items-center">
-                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide text-sm sm:text-base">
-                                    <span class="text-2xl sm:text-3xl mr-3 sm:mr-4">🎵</span> Sound Designing
-                                </span>
-                                <span class="gold-gradient font-bold text-base sm:text-lg">81%</span>
-                            </div>
-                            <div style="background: var(--dark-border);" class="rounded-full h-3 sm:h-4">
-                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-3 sm:h-4 rounded-full" style="width: 0%" data-width="81%"></div>
+                            <div style="background: var(--dark-border);" class="rounded-full h-4">
+                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-4 rounded-full" style="width: 0%" data-width="90%"></div>
                             </div>
                         </div>
                         
                         <div class="glass-effect p-4 rounded-2xl">
-                            <div class="flex justify-between mb-3 items-center">
-                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide text-sm sm:text-base">
-                                    <span class="text-2xl sm:text-3xl mr-3 sm:mr-4">🎨</span> Color Correction & Grading
+                            <div class="flex justify-between mb-3">
+                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide">
+                                    <span class="text-3xl mr-4">🎵</span> Sound Designing
                                 </span>
-                                <span class="gold-gradient font-bold text-base sm:text-lg">84%</span>
+                                <span class="gold-gradient font-bold text-lg">81%</span>
                             </div>
-                            <div style="background: var(--dark-border);" class="rounded-full h-3 sm:h-4">
-                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-3 sm:h-4 rounded-full" style="width: 0%" data-width="84%"></div>
+                            <div style="background: var(--dark-border);" class="rounded-full h-4">
+                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-4 rounded-full" style="width: 0%" data-width="81%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-effect p-4 rounded-2xl">
+                            <div class="flex justify-between mb-3">
+                                <span style="color: var(--platinum);" class="font-semibold flex items-center tracking-wide">
+                                    <span class="text-3xl mr-4">🎨</span> Color Correction & Grading
+                                </span>
+                                <span class="gold-gradient font-bold text-lg">84%</span>
+                            </div>
+                            <div style="background: var(--dark-border);" class="rounded-full h-4">
+                                <div class="skill-bar bg-gradient-to-r from-yellow-400 to-yellow-600 h-4 rounded-full" style="width: 0%" data-width="84%"></div>
                             </div>
                         </div>
                     </div>
                     
-                    <p class="text-base sm:text-lg mb-10 leading-relaxed tracking-wide font-light" style="color: var(--platinum);">
+                    <p class="text-lg mb-10 leading-relaxed tracking-wide font-light" style="color: var(--platinum);">
                         Every frame tells a story. Every cut creates emotion. Every project becomes a masterpiece.
                     </p>
                     
-                    <a href="#contact" class="swipe-btn inline-block px-8 py-3 sm:px-10 sm:py-4 rounded-full font-bold text-black tracking-wide luxury-heading">
+                    <a href="#contact" class="swipe-btn inline-block px-10 py-4 rounded-full font-bold text-black tracking-wide luxury-heading">
                         Let's Talk ✨
                     </a>
                 </div>
@@ -375,21 +373,21 @@
         </div>
     </section>
 
-    <section id="projects" class="py-24">
+    <section id="projects" class="py-24" style="background: var(--dark-bg);">
         <div class="max-w-6xl mx-auto px-6">
             
-            <div class="mb-24 sm:mb-40">
-                <div class="text-center mb-16 sm:mb-24 fade-in">
-                    <div class="glass-effect rounded-3xl p-8 sm:p-12 border-2 relative overflow-hidden" style="border-color: var(--gold-primary); box-shadow: 0 25px 80px rgba(212, 175, 55, 0.2);">
-                        <h3 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 relative z-10 leading-tight tracking-tight luxury-heading">
+            <div class="mb-40">
+                <div class="text-center mb-24 fade-in">
+                    <div class="glass-effect rounded-3xl p-12 border-2 relative overflow-hidden" style="border-color: var(--gold-primary); box-shadow: 0 25px 80px rgba(212, 175, 55, 0.2);">
+                        <h3 class="text-5xl md:text-6xl font-bold mb-6 relative z-10 leading-tight tracking-tight luxury-heading">
                             <span class="gold-gradient">🎬 Horizontal Videos</span>
                         </h3>
                         <div class="w-20 h-1.5 mx-auto mb-6 rounded-full" style="background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));"></div>
-                        <p style="color: var(--platinum);" class="text-lg sm:text-xl md:text-2xl font-light tracking-wide">VSL's, Ads, and More</p>
+                        <p style="color: var(--platinum);" class="text-2xl font-light tracking-wide">VSL's Ads and More</p>
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-1 gap-12 sm:gap-16 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 gap-16 max-w-4xl mx-auto">
                     <div class="fade-in">
                         <div class="relative rounded-3xl overflow-hidden project-card video-placeholder" style="border: 3px solid var(--gold-primary);">
                             <iframe
@@ -435,13 +433,13 @@
             </div>
 
             <div>
-                <div class="text-center mb-16 sm:mb-24 fade-in">
-                    <div class="glass-effect rounded-3xl p-8 sm:p-12 border-2 relative overflow-hidden" style="border-color: var(--gold-primary); box-shadow: 0 25px 80px rgba(212, 175, 55, 0.2);">
-                        <h3 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 relative z-10 leading-tight tracking-tight luxury-heading">
+                <div class="text-center mb-24 fade-in">
+                    <div class="glass-effect rounded-3xl p-12 border-2 relative overflow-hidden" style="border-color: var(--gold-primary); box-shadow: 0 25px 80px rgba(212, 175, 55, 0.2);">
+                        <h3 class="text-5xl md:text-6xl font-bold mb-6 relative z-10 leading-tight tracking-tight luxury-heading">
                             <span class="gold-gradient">📱 Vertical Videos</span>
                         </h3>
                         <div class="w-20 h-1.5 mx-auto mb-6 rounded-full" style="background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));"></div>
-                        <p style="color: var(--platinum);" class="text-lg sm:text-xl md:text-2xl font-light tracking-wide">Reels, Shorts & and more</p>
+                        <p style="color: var(--platinum);" class="text-2xl font-light tracking-wide">Reels, Shorts & and more</p>
                     </div>
                 </div>
                 
@@ -529,22 +527,6 @@
                             </iframe>
                         </div>
                     </div>
-                    
-                    <div class="fade-in sm:col-span-2 flex justify-center">
-                        <div class="w-full sm:w-1/2">
-                            <div class="relative rounded-3xl overflow-hidden project-card vertical-video-placeholder" style="border: 3px solid var(--gold-primary);">
-                               <iframe
-                                    class="absolute top-0 left-0 w-full h-full"
-                                    src="https://www.youtube.com/embed/XvzUZkApacY?autoplay=1&mute=1&loop=1&playlist=XvzUZkApacY&controls=1&showinfo=0&modestbranding=1"
-                                    title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                    loading="lazy">
-                                </iframe>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -553,7 +535,7 @@
     <section id="contact" class="py-24 luxury-gradient">
         <div class="max-w-5xl mx-auto px-6 text-center">
             <div class="fade-in">
-                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 leading-tight tracking-tight luxury-heading">
+                <h2 class="text-5xl md:text-6xl font-bold mb-8 leading-tight tracking-tight luxury-heading">
                     <span class="gold-gradient">Have footage?</span><br>
                     <span style="color: var(--champagne);">Let's turn it into content that works.</span>
                 </h2>
@@ -561,56 +543,56 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16 max-w-5xl mx-auto">
                     <div class="glass-effect rounded-3xl p-8 border card-hover" style="border-color: var(--gold-primary); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);">
                         <div class="text-center">
-                            <div class="text-4xl sm:text-5xl mb-4">📧</div>
-                            <h4 class="gold-gradient font-bold text-lg sm:text-xl mb-3 tracking-wide luxury-heading">Email</h4>
-                            <p style="color: var(--platinum);" class="text-xs sm:text-sm tracking-wider font-medium">sujoygain.edits@gmail.com</p>
+                            <div class="text-5xl mb-4">📧</div>
+                            <h4 class="gold-gradient font-bold text-xl mb-3 tracking-wide luxury-heading">Email</h4>
+                            <p style="color: var(--platinum);" class="text-sm tracking-wider font-medium">sujoygain.edits@gmail.com</p>
                         </div>
                     </div>
                     
                     <div class="glass-effect rounded-3xl p-8 border card-hover" style="border-color: var(--gold-primary); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);">
                         <div class="text-center">
-                            <div class="text-4xl sm:text-5xl mb-4">📱</div>
-                            <h4 class="gold-gradient font-bold text-lg sm:text-xl mb-3 tracking-wide luxury-heading">Phone</h4>
-                            <p style="color: var(--platinum);" class="text-xs sm:text-sm tracking-wider font-medium">+91 8478955957</p>
+                            <div class="text-5xl mb-4">📱</div>
+                            <h4 class="gold-gradient font-bold text-xl mb-3 tracking-wide luxury-heading">Phone</h4>
+                            <p style="color: var(--platinum);" class="text-sm tracking-wider font-medium">+91 8478955957</p>
                         </div>
                     </div>
                     
                     <div class="glass-effect rounded-3xl p-8 border card-hover" style="border-color: var(--gold-primary); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);">
                         <div class="text-center">
-                            <div class="text-4xl sm:text-5xl mb-4">📍</div>
-                            <h4 class="gold-gradient font-bold text-lg sm:text-xl mb-3 tracking-wide luxury-heading">Location</h4>
-                            <p style="color: var(--platinum);" class="text-xs sm:text-sm tracking-wider font-medium">Kolkata, India</p>
+                            <div class="text-5xl mb-4">📍</div>
+                            <h4 class="gold-gradient font-bold text-xl mb-3 tracking-wide luxury-heading">Location</h4>
+                            <p style="color: var(--platinum);" class="text-sm tracking-wider font-medium">Kolkata, India</p>
                         </div>
                     </div>
                 </div>
                 
-                <a href="https://wa.me/+918478955957" class="swipe-btn inline-block px-12 py-5 sm:px-16 sm:py-6 rounded-full text-xl sm:text-2xl font-bold text-black tracking-wide luxury-heading">
+                <a href="https://wa.me/+918478955957" class="swipe-btn inline-block px-16 py-6 rounded-full text-2xl font-bold text-black tracking-wide luxury-heading">
                     Start Your Project ✨
                 </a>
             </div>
             
             <div class="mt-20 pt-10 border-t" style="border-color: rgba(212, 175, 55, 0.3);">
-                <div class="flex justify-center space-x-6 sm:space-x-8 mb-8">
-                    <a href="https://wa.me/+918478955957" class="social-icon text-2xl sm:text-3xl" title="WhatsApp">
+                <div class="flex justify-center space-x-8 mb-8">
+                    <a href="https://wa.me/+918478955957" class="social-icon text-3xl" title="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="https://www.instagram.com/hisujoygain?igsh=bnoyZ3g1M3BzM21z" class="social-icon text-2xl sm:text-3xl" title="Instagram">
+                    <a href="https://www.instagram.com/hisujoygain?igsh=bnoyZ3g1M3BzM21z" class="social-icon text-3xl" title="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.youtube.com/@hisujoy.videoeditor" class="social-icon text-2xl sm:text-3xl" title="YouTube">
+                    <a href="https://www.youtube.com/@hisujoy.videoeditor" class="social-icon text-3xl" title="YouTube">
                         <i class="fab fa-youtube"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/sujoy-gain-77a6571a5" class="social-icon text-2xl sm:text-3xl" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/sujoy-gain-77a6571a5" class="social-icon text-3xl" title="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                     <a href="https://t.me/SujoyGain" class="social-icon text-2xl sm:text-3xl" title="Telegram">
+                     <a href="https://t.me/SujoyGain" class="social-icon text-3xl" title="Telegram">
                         <i class="fab fa-telegram"></i>
                     </a>
-                    <a href="https://x.com/HiSujoyGain" class="social-icon text-2xl sm:text-3xl" title="Twitter">
+                    <a href="https://x.com/HiSujoyGain" class="social-icon text-3xl" title="Twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </div>
-                <p style="color: var(--platinum);" class="text-sm sm:text-lg tracking-wide font-light">Follow me on social media and drop me a WhatsApp message — I'll reply within 24 hours.</p>
+                <p style="color: var(--platinum);" class="tracking-wide font-light text-lg">Follow me on social media and drop me a WhatsApp message — I'll reply within 24 hours.</p>
             </div>
         </div>
     </section>
